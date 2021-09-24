@@ -13,3 +13,25 @@ Text Domain: kadence-child
 
 /* Theme customization starts here
 -------------------------------------------------------------- */
+.site-header-row.site-header-row-center-column {
+	align-items: center;
+}
+.site-header-section-center {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.site-header-section-right {
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.site-branding.branding-layout-vertical.site-title-top a.brand .site-title-wrap {
+	display: none;
+}
+
+.button.header-button.button-size-small {
+	font-size: 90%;
+	padding: 0.3em 0;
+}
