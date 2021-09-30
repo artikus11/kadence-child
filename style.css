@@ -16,6 +16,7 @@ Text Domain: kadence-child
 .site-header-row.site-header-row-center-column {
 	align-items: center;
 }
+
 .site-header-section-center {
 	flex-direction: column;
 	justify-content: center;
@@ -34,4 +35,47 @@ Text Domain: kadence-child
 .button.header-button.button-size-small {
 	font-size: 90%;
 	padding: 0.3em 0;
+}
+
+#block-27 p {
+	margin: 0;
+}
+
+form.footer-form-answer {
+	padding: 30px;
+	background-color: #fff;
+	border-radius: 6px;
+	color: #595959;
+	
+}
+
+form.footer-form-answer h2 {
+	margin-bottom: 15px;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 20px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+form.footer-form-answer .footer-form-content {
+	margin-bottom: 15px;
+}
+
+form.footer-form-answer .footer-form-fields {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+form.footer-form-answer .footer-form-fields input[type="submit"] {
+	padding: 12px 16px;
+}
+
+form.footer-form-answer .footer-form-fields .ajax-loader {
+	flex: 0 0 100%;
+}
+
+form.footer-form-answer .footer-form-fields label {
+	font-size: 10px;
 }
