@@ -88,3 +88,52 @@ form.footer-form-answer .footer-form-fields label {
 	-webkit-align-items: center;
 	align-items: center;
 }
+
+.kt-adv-heading-vertical-border {
+	border-left: 4px solid #E7CF61;
+	padding-left: 10px;
+	margin-left: -10px;
+}
+
+.home-main-slider .kt-blocks-carousel .slick-dots {
+	position: absolute;
+	bottom: 15px;
+	list-style: none;
+	display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	left: 0;
+}
+
+.wp-block-kadence-advancedheading.kt-adv-heading_fe888b-03[data-kb-block="kb-adv-heading_fe888b-03"] {
+	border-radius: 3px;
+	background: linear-gradient(
+			-51deg, transparent 98px, #fff 0);
+}
+
+.kt-adv-heading_fe888b-03::before {
+	content: '';
+	
+}
+
+.home-column-number-stage {
+	position: relative;
+}
+
+.home-column-number-stage .home-number-stage {
+	align-self: baseline;
+}
+
+.home-column-number-stage .home-number-stage-01 {
+	left: -25px;
+}
+
+.home-column-number-stage .home-number-stage-02 {
+	left: 46px;
+}
+
+.home-column-number-stage .home-number-stage-03 {
+	left: 116px;
+}
