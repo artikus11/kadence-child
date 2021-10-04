@@ -7,22 +7,19 @@ class Shortcodes {
 	public function setup_hooks() {
 
 		add_shortcode( 'header_contact', [ $this, 'header_content' ] );
-
 		add_shortcode( 'footer_contact', [ $this, 'footer_content' ] );
-	}
 
+	}
 
 	/**
 	 * @param  string $number
 	 *
 	 * @return string
 	 */
-	protected function sanitize_number( string $number )
-	: string {
+	protected function sanitize_number( string $number ): string {
 
 		return trim( preg_replace( '/[^\d|\+]/', '', $number ) );
 	}
-
 
 	/**
 	 * Шорткод вывода контактных данных в подвале
@@ -40,6 +37,7 @@ class Shortcodes {
 		$phone    = $atts['phone'] ?? '';
 		$whatsapp = $atts['whatsapp'] ?? '';
 
+		ob_start();
 		?>
 		<style>
 			.header-contact {
@@ -77,8 +75,7 @@ class Shortcodes {
 		<div class="header-contact">
 			<div class="header-contact-item header-contact-phone">
 			<span class="header-contact-icon">
-<svg width="30" height="30" fill="none"><defs/><path fill="#e82d00" d="M15 30a15 15 0 100-30 15 15 0 000 30z"/><path fill="#FAFAFA"
-                                                                                                                     d="M22.5 18.1c-1.62 0-3.16-.35-4.58-1.05a.95.95 0 00-1.26.43l-.68 1.4a13.2 13.2 0 01-4.87-4.86l1.4-.68a.94.94 0 00.44-1.26A10.32 10.32 0 0111.9 7.5a.94.94 0 00-.94-.94H7.5a.94.94 0 00-.94.94c0 8.79 7.15 15.94 15.94 15.94.52 0 .94-.42.94-.94v-3.46a.94.94 0 00-.94-.94z"/></svg>
+<svg width="30" height="30" fill="currentColor" class=""><path d="M15 30a15 15 0 100-30 15 15 0 000 30z"/><path d="M22.5 18.1c-1.62 0-3.16-.35-4.58-1.05a.95.95 0 00-1.26.43l-.68 1.4a13.2 13.2 0 01-4.87-4.86l1.4-.68a.94.94 0 00.44-1.26A10.32 10.32 0 0111.9 7.5a.94.94 0 00-.94-.94H7.5a.94.94 0 00-.94.94c0 8.79 7.15 15.94 15.94 15.94.52 0 .94-.42.94-.94v-3.46a.94.94 0 00-.94-.94z"/></svg>
 			</span>
 				<a href="tel:<?php echo esc_html( $this->sanitize_number( $phone ) ); ?>"
 				   class="header-contact-label"><?php echo esc_html( $phone ); ?></a>
@@ -97,8 +94,9 @@ class Shortcodes {
 
 		</div>
 		<?php
-	}
 
+		return ob_get_clean();
+	}
 
 	/**
 	 * Шорткод вывода контактных данных в подвале
@@ -126,6 +124,7 @@ class Shortcodes {
 		$mail      = $atts['mail'] ?? '';
 		$follow    = $atts['follow'] ?? '';
 
+		ob_start();
 		?>
 		<style>
 			.footer-contact {
@@ -249,6 +248,8 @@ class Shortcodes {
 			<?php endif; ?>
 		</div>
 		<?php
+
+		return ob_get_clean();
 	}
 
 }

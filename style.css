@@ -79,3 +79,12 @@ form.footer-form-answer .footer-form-fields .ajax-loader {
 form.footer-form-answer .footer-form-fields label {
 	font-size: 10px;
 }
+
+.kb-form .kadence-blocks-form-field.kb-accept-form-field .kb-checkbox-style {
+	margin: 0 0.5rem 0 0;
+}
+
+.kb-form .kadence-blocks-form-field.kb-accept-form-field {
+	-webkit-align-items: center;
+	align-items: center;
+}
