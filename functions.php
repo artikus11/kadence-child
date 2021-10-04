@@ -1,4 +1,5 @@
 <?php
+
 require_once 'includes/class-enqueue.php';
 require_once 'includes/class-cleanup.php';
 require_once 'includes/class-hide.php';
@@ -29,14 +30,16 @@ add_filter(
 	4
 );
 
-add_action('wp_footer', function () {
+add_action( 'wp_footer', function () {
 
 	?>
 	<script>
-		jQuery(document).ready(function($){
-			console.log( $('input.kb-tel-field'));
-			  $('input.kb-tel-field').mask('+7 (___) ___-__-__');
-		});
+		 jQuery( document ).ready( function( $ ) {
+			 let blockID = $( '.site-footer-middle-section-4 .footer-widget-area-inner section.widget_block' ).prop( 'id' );
+
+			 $( '.footer-form input[name="_kb_form_post_id"]' ).val( blockID );
+			 $( 'input.kb-tel-field' ).mask( '+7 (000) 000-00-00' );
+		 } );
 	</script>
 	<?php
 } );

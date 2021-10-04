@@ -38,7 +38,7 @@ class Hide {
 			add_action( 'init', [ $this, 'remove_front_admin_bar' ] );
 		}
 
-		add_action( 'wp_dashboard_setup', [ $this, 'dashboard' ] );
+		add_action( 'wp_dashboard_setup', [ $this, 'dashboard' ], 100 );
 		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 
 		add_filter( 'wp_count_comments', [ $this, 'count_comments_empty' ] );
@@ -100,6 +100,7 @@ class Hide {
 		remove_action( 'admin_bar_menu', 'wp_admin_bar_wp_menu', 10 );
 		remove_action( 'admin_bar_menu', 'wp_admin_bar_comments_menu', 60 );
 		remove_action( 'admin_bar_menu', [ 'Admin_Bar_Menu', 'add_menu' ], 100 );
+
 		if ( ! current_user_can( 'delete_others_posts' ) ) {
 			remove_action( 'admin_bar_menu', 'wp_admin_bar_new_content_menu', 70 );
 
@@ -113,9 +114,11 @@ class Hide {
 	 */
 	public function dashboard() {
 
-
 		$dash_side   = &$GLOBALS['wp_meta_boxes']['dashboard']['side']['core'];
 		$dash_normal = &$GLOBALS['wp_meta_boxes']['dashboard']['normal']['core'];
+		$dash_high   = &$GLOBALS['wp_meta_boxes']['dashboard']['normal']['high'];
+
+		unset( $dash_high['rank_math_dashboard_widget'] );
 
 		unset( $dash_side['dashboard_quick_press'] );       // Быстрая публикация
 		unset( $dash_side['dashboard_recent_drafts'] );     // Последние черновики
@@ -131,7 +134,6 @@ class Hide {
 		unset( $dash_normal['woo_vl_news_widget'] );         // Виджет здоровья
 		unset( $dash_normal['woo_st-dashboard_right_now'] );         // Виджет здоровья
 		unset( $dash_normal['woo_st-dashboard_sales'] );         // Виджет здоровья
-		unset( $dash_normal['rank_math_dashboard_widget'] );         // Виджет здоровья
 
 		unset( $dash_normal['dashboard_activity'] );        // Активность
 		unset( $dash_normal['owp_dashboard_news'] );        // Активность

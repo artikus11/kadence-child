@@ -24,7 +24,7 @@ class Enqueue {
 
 		$this->suffix      = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : 'min.';
 		$this->url_assets  = get_theme_file_uri( '/assets/' );
-		$this->path_assets = get_parent_theme_file_path() . '/assets/';
+		$this->path_assets = get_theme_file_path( '/assets/' );
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ], 999 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_style' ] );
