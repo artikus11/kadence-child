@@ -1,6 +1,6 @@
 <?php
 
-namespace Art\DSG;
+namespace Art\Kadence_Child;
 
 class Enqueue {
 
@@ -16,9 +16,6 @@ class Enqueue {
 	 */
 	public $path_assets;
 
-	private $font_url;
-
-	private $font_args;
 
 	public function __construct() {
 

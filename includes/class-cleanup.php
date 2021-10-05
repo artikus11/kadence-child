@@ -1,6 +1,6 @@
 <?php
 
-namespace Art\DSG;
+namespace Art\Kadence_Child;
 
 class Cleanup {
 

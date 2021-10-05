@@ -28,6 +28,17 @@ Text Domain: kadence-child
 	align-items: flex-end;
 }
 
+@media screen and (max-width: 1024px) {
+	.site-header-section-right {
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 719px) {
+
+}
+
 .site-branding.branding-layout-vertical.site-title-top a.brand .site-title-wrap {
 	display: none;
 }

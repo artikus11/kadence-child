@@ -7,7 +7,7 @@
  * @package varman
  */
 
-namespace Art\DSG;
+namespace Art\Kadence_Child;
 
 class Hide {
 
